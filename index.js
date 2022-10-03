@@ -109,7 +109,7 @@ const pageLoaded = () => {
   });
 
   // Lazy load contact form iframe
-  document.getElementById('contact-form').setAttribute('src', 'https://docs.google.com/forms/d/e/1FAIpQLSd8v5SA60CpZtwK2njAqfyT5b1FOwZhoqyGdhe2VNIXOXOEhg/viewform?embedded=true');
+  document.getElementById('contact-form').setAttribute('src', "https://docs.google.com/forms/d/e/1FAIpQLSfByCZGKPpYQGEdbnDgo7_S3xmbXuc-H4QAPqB2SZ_thosFWQ/viewform?embedded=true");
 
   window.removeEventListener('load', pageLoaded);
 }
