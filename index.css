@@ -11,7 +11,6 @@
 }
 
 .dark-bg{
-  /* --primary-color : white; */
   --navbar-bg : #318D44;
   --navbar-color : white;
   --secondary-bg : black;
@@ -38,7 +37,7 @@
 
 body {
   margin: 0;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg) !important;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -775,22 +774,25 @@ body {
 .icon-bar {
   position: fixed;
   top: 50%;
+  right : 10px;
   -webkit-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: right;
+  background-color: var(--primary-bg);
 }
 
 .icon-bar a {
   display: block;
   text-align: center;
   /* padding: 20px; */
-  transition: all 0.3s ease;
-  color: green;
+  transition: all 0.2s ease;
+  color: white;
   font-size: 20px;
   margin: 20px;
 }
 
-.icon-bar a :hover {
-  transform: scale(2)
+.icon-bar a:hover, .icon-bar a:focus {
+  transform: scale(1.5);
+  color : white;
 }
