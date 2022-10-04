@@ -124,7 +124,6 @@ const pageLoaded = () => {
       const name = ourTeam.querySelector(".name");
 
       const member = members.filter(member => member["Name"].includes(name.textContent));
-      console.log(member);
 
       if (member.length > 0) {
 
@@ -163,3 +162,17 @@ const pageLoaded = () => {
 }
 window.addEventListener('load', pageLoaded);
 // Loading screen end
+
+// Theme switcher start
+const themeSwitcher = document.querySelector('.theme-btn');
+themeSwitcher.addEventListener('click', () => {
+  document.querySelector('body').classList.toggle('dark-bg');
+  themeSwitcher.querySelector("i").classList.toggle('fa-sun');
+  themeSwitcher.querySelector("i").classList.toggle("fa-moon");
+  themeSwitcher.setAttribute(
+    "title",
+    themeSwitcher.getAttribute("title") === "Switch to Dark Mode"
+      ? "Switch to Light Mode"
+      : "Switch to Dark Mode"
+  );
+})

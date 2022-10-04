@@ -1,8 +1,44 @@
+/* Dual Theme Start */
+:root{
+  --navbar-bg : white;
+  --navbar-color : green;
+  --primary-bg : green;
+  --primary-color : green;
+  --primary-color-hover : black;
+  --secondary-bg : white;
+  --secondary-color :black;
+  --our-team-box-shadow : #0000001a;
+}
+
+.dark-bg{
+  /* --primary-color : white; */
+  --navbar-bg : #318D44;
+  --navbar-color : white;
+  --secondary-bg : black;
+  --secondary-color : white;
+  --our-team-box-shadow : #ffffff98;
+}
+
+.theme-btn{
+  cursor: pointer;
+  position : fixed;
+  right : 10px;
+  bottom : 10px;
+  width : 50px;
+  height : 50px;
+  border-radius : 50%;
+  background-color: var(--primary-bg);
+  color : white;
+  border : none;
+}
+
+/*Dual Theme end*/
+
 /* Common start */
 
 body {
   margin: 0;
-  background-color: #ffffff;
+  background-color: var(--secondary-bg);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -76,7 +112,7 @@ body {
   display: grid;
   min-height: 90px;
   grid-auto-flow: column;
-  background-color: #fcfcfc;
+  background-color: var(--navbar-bg);
   grid-gap: 1.5em;
   padding: 0 40px;
   box-shadow: -1px 4px 15px 0px rgba(209, 205, 209, 0.5);
@@ -108,7 +144,7 @@ body {
 
 #links a {
   text-decoration: none;
-  color: green;
+  color: var(--navbar-color);
   font-weight: 500;
   font-size: 1.15rem;
   transition: 0.3s;
@@ -413,7 +449,7 @@ body {
 /* Team start  */
 
 .our-team-head {
-  color: black;
+  color: var(--secondary-color);
   font-weight: 900;
   font-size: 3rem;
   text-align: center;
@@ -433,7 +469,7 @@ body {
 
 .our-team {
   width: 23rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px var(--our-team-box-shadow);
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -496,6 +532,7 @@ body {
 .our-team .name {
   margin: 20px 0 3px 0;
   font-size: 1.5rem;
+  color : var(--secondary-color)
 }
 
 .our-team .title {
