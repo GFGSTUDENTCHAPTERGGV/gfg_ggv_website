@@ -111,6 +111,56 @@ const pageLoaded = () => {
   // Lazy load contact form iframe
   document.getElementById('contact-form').setAttribute('src', "https://docs.google.com/forms/d/e/1FAIpQLSfByCZGKPpYQGEdbnDgo7_S3xmbXuc-H4QAPqB2SZ_thosFWQ/viewform?embedded=true");
 
+  // Getting data from Api
+  fetch(
+    "https://script.google.com/macros/s/AKfycbzXISS8GUquiaDjsPTYI6e4Ly3hqYYJidB25hpHMb4_pH9AisWVX8OuLdzo7AGLfaLmRg/exec"
+  ).then(response => response.json()).then(data => {
+
+    const members = data.data;
+
+    const ourTeams = document.querySelectorAll(".our-team");
+
+    ourTeams.forEach((ourTeam, index) => {
+      const name = ourTeam.querySelector(".name");
+      const position = ourTeam.querySelector(".title");
+
+      const member = members.filter(member => member["Name"].includes(name.textContent));
+      console.log(member);
+      //<li><a href="#" class="fa fa-linkedin"aria-hidden="true"></a></li>
+
+      if (member.length > 0) {
+
+      ourTeam.querySelector(".social");
+      if (member[0]["LinkedIn Profile"] !== "") {
+        const linkedIn = document.createElement("li");
+        linkedIn.innerHTML = `<a href="${member[0]["LinkedIn Profile"]}" class="fa fa-linkedin" aria-hidden="true"></a>`;
+        ourTeam.querySelector(".social").appendChild(linkedIn);
+      }
+      if (member[0]["GitHub Profile"] !== "") {
+        const gitHub = document.createElement("li");
+        gitHub.innerHTML = `<a href="${member[0]["GitHub Profile"]}" class="fa fa-github" aria-hidden="true"></a>`;
+        ourTeam.querySelector(".social").appendChild(gitHub);
+      }
+      if (member[0]["Twitter"] !== "") {
+        const twitter = document.createElement("li");
+        twitter.innerHTML = `<a href="${member[0]["Twitter"]}" class="fa fa-twitter" aria-hidden="true"></a>`;
+        ourTeam.querySelector(".social").appendChild(twitter);
+      }
+      if (member[0]["Instagram"] !== "") {
+        const instagram = document.createElement("li");
+        instagram.innerHTML = `<a href="${member[0]["Instagram"]}" class="fa fa-instagram" aria-hidden="true"></a>`;
+        ourTeam.querySelector(".social").appendChild(instagram);
+      }
+      if (member[0]["Portfolio website"] !== "") {
+        const portfolio = document.createElement("li");
+        portfolio.innerHTML = `<a href="${member[0]["Portfolio website"]}" class="fa fa-link" aria-hidden="true"></a>`;
+        ourTeam.querySelector(".social").appendChild(portfolio);
+      }
+    }
+    });
+
+  })
+
   window.removeEventListener('load', pageLoaded);
 }
 window.addEventListener('load', pageLoaded);
