@@ -122,11 +122,9 @@ const pageLoaded = () => {
 
     ourTeams.forEach((ourTeam, index) => {
       const name = ourTeam.querySelector(".name");
-      const position = ourTeam.querySelector(".title");
 
       const member = members.filter(member => member["Name"].includes(name.textContent));
       console.log(member);
-      //<li><a href="#" class="fa fa-linkedin"aria-hidden="true"></a></li>
 
       if (member.length > 0) {
 
