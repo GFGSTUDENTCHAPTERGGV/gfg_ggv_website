@@ -2,20 +2,31 @@
 :root{
   --navbar-bg : white;
   --navbar-color : green;
+
   --primary-bg : green;
   --primary-color : green;
   --primary-color-hover : black;
+
   --secondary-bg : white;
   --secondary-color :black;
+
   --our-team-box-shadow : #0000001a;
+
+  --sidebar-bg : green;
+  --sidebar-color : white;
 }
 
 .dark-bg{
   --navbar-bg : #318D44;
   --navbar-color : white;
+
   --secondary-bg : black;
   --secondary-color : white;
+
   --our-team-box-shadow : #ffffff98;
+
+  --sidebar-bg : black;
+  --sidebar-color : green;
 }
 
 .theme-btn{
@@ -26,8 +37,9 @@
   width : 50px;
   height : 50px;
   border-radius : 50%;
-  background-color: var(--primary-bg);
-  color : white;
+  background-color: var(--sidebar-bg);
+  color : var(--sidebar-color);
+  box-shadow: 0 0 15px var(--our-team-box-shadow);
   border : none;
 }
 
@@ -294,6 +306,12 @@ body {
   border: none;
   color: white;
   text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+
+.bbt:hover{
+  color : white;
+  background-color: darkgreen;
 }
 
 @media screen and (max-width:980px) {
@@ -734,6 +752,7 @@ body {
 /* Footer start  */
 
 .footer-body {
+  /* TODO : download this image and use it here  */
   background-image: url(https://cdn.jsdelivr.net/gh/GfG-IIIT-Bh/GfG-IIIT-Bh.github.io/assets/section-bg-flat.webp);
   background-repeat: no-repeat;
   background-position: center center;
@@ -779,7 +798,8 @@ body {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: right;
-  background-color: var(--primary-bg);
+  background-color: var(--sidebar-bg);
+  box-shadow: 0 0 15px var(--our-team-box-shadow);
 }
 
 .icon-bar a {
@@ -787,12 +807,12 @@ body {
   text-align: center;
   /* padding: 20px; */
   transition: all 0.2s ease;
-  color: white;
+  color: var(--sidebar-color);
   font-size: 20px;
   margin: 20px;
 }
 
 .icon-bar a:hover, .icon-bar a:focus {
   transform: scale(1.5);
-  color : white;
+  color: var(--sidebar-color);
 }
