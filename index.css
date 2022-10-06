@@ -8,6 +8,9 @@
   --secondary-bg: white;
   --secondary-color: black;
   --our-team-box-shadow: #0000001a;
+
+  --sidebar-bg : green;
+  --sidebar-color : white;
 }
 
 .dark-bg {
@@ -16,6 +19,9 @@
   --secondary-bg: black;
   --secondary-color: white;
   --our-team-box-shadow: #ffffff98;
+
+  --sidebar-bg : black;
+  --sidebar-color : green;
 }
 
 .theme-btn {
@@ -26,9 +32,10 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--primary-bg);
-  color: white;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-color);
   border: none;
+  box-shadow: 0 0 15px var(--our-team-box-shadow);
 }
 
 /*Dual Theme end*/
@@ -343,6 +350,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: -1;
   flex-direction: column;
   /* background-image: url(https://cdn.jsdelivr.net/gh/GfG-IIIT-Bh/GfG-IIIT-Bh.github.io/assets/section-bg.webp); */
   background-color: rgba(0, 0, 0, 0.903);
@@ -784,7 +792,8 @@ body {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: right;
-  background-color: var(--primary-bg);
+  background-color: var(--sidebar-bg);
+  box-shadow: 0 0 15px var(--our-team-box-shadow);
 }
 
 .icon-bar a {
@@ -792,7 +801,7 @@ body {
   text-align: center;
   /* padding: 20px; */
   transition: all 0.2s ease;
-  color: white;
+  color: var(--sidebar-color);
   font-size: 20px;
   margin: 20px;
 }
@@ -800,7 +809,7 @@ body {
 .icon-bar a:hover,
 .icon-bar a:focus {
   transform: scale(1.5);
-  color: white;
+  color: var(--sidebar-color);
 }
 
 
