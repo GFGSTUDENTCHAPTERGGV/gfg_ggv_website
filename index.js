@@ -9,11 +9,11 @@ function closeNav() {
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
 
@@ -24,11 +24,11 @@ var navBody = document.getElementById("navbar");
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos >= currentScrollPos) {
-      navWrap.style.top = "0";
-      navBody.style.boxShadow = "-1px 4px 15px 0px rgba(209, 205, 209, 0.5)";
+    navWrap.style.top = "0";
+    navBody.style.boxShadow = "-1px 4px 15px 0px rgba(209, 205, 209, 0.5)";
   } else {
-      navWrap.style.top = "-91px";
-      navBody.style.boxShadow = "-1px 4px 15px 0px rgba(209, 205, 209, 0)";
+    navWrap.style.top = "-91px";
+    navBody.style.boxShadow = "-1px 4px 15px 0px rgba(209, 205, 209, 0)";
   }
   prevScrollpos = currentScrollPos;
 }
@@ -38,21 +38,21 @@ window.onscroll = function () {
 // Events Start
 var swiper = new Swiper(".mySwiper", {
   breakpoints: {
-      1500: { slidesPerView: 3 },
-      900: { slidesPerView: 2, spaceBetween: 25 },
+    1500: { slidesPerView: 3 },
+    900: { slidesPerView: 2, spaceBetween: 25 },
   },
   spaceBetween: 10,
   slidesPerView: 1,
   centeredSlides: false,
   loop: true,
   autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
+    delay: 2500,
+    disableOnInteraction: false,
   },
   pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
   },
 });
 // Events end
@@ -65,15 +65,15 @@ iframe.scrolling = "no";
 const checkActive = () => {
   console.log("ran");
   if (document.activeElement.id == "contact-form")
-      iframe.scrolling = "yes";
+    iframe.scrolling = "yes";
 }
 
 var observer = new IntersectionObserver(function (entries) {
   if (entries[0].isIntersecting === true) {
-      window.addEventListener('blur', checkActive);
+    window.addEventListener('blur', checkActive);
   } else {
-      window.removeEventListener('blur', checkActive);
-      iframe.scrolling = "no";
+    window.removeEventListener('blur', checkActive);
+    iframe.scrolling = "no";
   }
 }, { threshold: [0] });
 
@@ -85,10 +85,10 @@ observer.observe(document.querySelector("#contact-form"));
 const pageLoaded = () => {
   // Animate on scroll
   AOS.init(
-      {
-          duration: 800,
-          once: true
-      }
+    {
+      duration: 800,
+      once: true
+    }
   );
 
   // Remove loader
@@ -99,13 +99,13 @@ const pageLoaded = () => {
   // Lazy load images with cdn
   const imgs = document.querySelectorAll('[data-src]');
   imgs.forEach(img => {
-      img.setAttribute('src', 'https://cdn.jsdelivr.net/gh/GfG-IIIT-Bh/GfG-IIIT-Bh.github.io' + img.getAttribute('data-src').substring(1));
+    img.setAttribute('src', 'https://cdn.jsdelivr.net/gh/GfG-IIIT-Bh/GfG-IIIT-Bh.github.io' + img.getAttribute('data-src').substring(1));
   });
 
   // Lazy load images without cdn
   const imgs2 = document.querySelectorAll('[data-src-noncdn]');
   imgs2.forEach(img => {
-      img.setAttribute('src', img.getAttribute('data-src-noncdn'));
+    img.setAttribute('src', img.getAttribute('data-src-noncdn'));
   });
 
   // Lazy load contact form iframe
@@ -127,33 +127,33 @@ const pageLoaded = () => {
 
       if (member.length > 0) {
 
-      ourTeam.querySelector(".social");
-      if (member[0]["LinkedIn Profile"] !== "") {
-        const linkedIn = document.createElement("li");
-        linkedIn.innerHTML = `<a href="${member[0]["LinkedIn Profile"]}" class="fa fa-linkedin" aria-hidden="true"></a>`;
-        ourTeam.querySelector(".social").appendChild(linkedIn);
+        ourTeam.querySelector(".social");
+        if (member[0]["LinkedIn Profile"] !== "") {
+          const linkedIn = document.createElement("li");
+          linkedIn.innerHTML = `<a href="${member[0]["LinkedIn Profile"]}" class="fa fa-linkedin" aria-hidden="true"></a>`;
+          ourTeam.querySelector(".social").appendChild(linkedIn);
+        }
+        if (member[0]["GitHub Profile"] !== "") {
+          const gitHub = document.createElement("li");
+          gitHub.innerHTML = `<a href="${member[0]["GitHub Profile"]}" class="fa fa-github" aria-hidden="true"></a>`;
+          ourTeam.querySelector(".social").appendChild(gitHub);
+        }
+        if (member[0]["Twitter"] !== "") {
+          const twitter = document.createElement("li");
+          twitter.innerHTML = `<a href="${member[0]["Twitter"]}" class="fa fa-twitter" aria-hidden="true"></a>`;
+          ourTeam.querySelector(".social").appendChild(twitter);
+        }
+        if (member[0]["Instagram"] !== "") {
+          const instagram = document.createElement("li");
+          instagram.innerHTML = `<a href="${member[0]["Instagram"]}" class="fa fa-instagram" aria-hidden="true"></a>`;
+          ourTeam.querySelector(".social").appendChild(instagram);
+        }
+        if (member[0]["Portfolio website"] !== "") {
+          const portfolio = document.createElement("li");
+          portfolio.innerHTML = `<a href="${member[0]["Portfolio website"]}" class="fa fa-link" aria-hidden="true"></a>`;
+          ourTeam.querySelector(".social").appendChild(portfolio);
+        }
       }
-      if (member[0]["GitHub Profile"] !== "") {
-        const gitHub = document.createElement("li");
-        gitHub.innerHTML = `<a href="${member[0]["GitHub Profile"]}" class="fa fa-github" aria-hidden="true"></a>`;
-        ourTeam.querySelector(".social").appendChild(gitHub);
-      }
-      if (member[0]["Twitter"] !== "") {
-        const twitter = document.createElement("li");
-        twitter.innerHTML = `<a href="${member[0]["Twitter"]}" class="fa fa-twitter" aria-hidden="true"></a>`;
-        ourTeam.querySelector(".social").appendChild(twitter);
-      }
-      if (member[0]["Instagram"] !== "") {
-        const instagram = document.createElement("li");
-        instagram.innerHTML = `<a href="${member[0]["Instagram"]}" class="fa fa-instagram" aria-hidden="true"></a>`;
-        ourTeam.querySelector(".social").appendChild(instagram);
-      }
-      if (member[0]["Portfolio website"] !== "") {
-        const portfolio = document.createElement("li");
-        portfolio.innerHTML = `<a href="${member[0]["Portfolio website"]}" class="fa fa-link" aria-hidden="true"></a>`;
-        ourTeam.querySelector(".social").appendChild(portfolio);
-      }
-    }
     });
 
   })
