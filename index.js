@@ -176,3 +176,16 @@ themeSwitcher.addEventListener('click', () => {
       : "Switch to Dark Mode"
   );
 })
+
+
+
+
+
+
+
+
+
+
+
+
+

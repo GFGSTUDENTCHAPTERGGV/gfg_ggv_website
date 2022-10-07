@@ -382,6 +382,8 @@ body {
 .swiper {
   height: 30rem;
   width: 90rem;
+  
+  
 }
 
 .swiper-slide {
@@ -419,6 +421,7 @@ body {
   object-fit: cover;
   opacity: 0.3;
   color: #818181;
+  
 }
 
 .swiper-pagination {
@@ -854,3 +857,20 @@ body {
 .sponser-item img {
   max-width: 150px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
