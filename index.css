@@ -736,8 +736,9 @@ body {
 /* Contact start  */
 
 #contact-form {
-  width: 650px;
-  height: 677px;
+  max-width: 650px;
+  width: 90%;
+  height: 700px;
 }
 
 #contact-form::-webkit-scrollbar {
